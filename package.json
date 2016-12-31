@@ -1,6 +1,6 @@
 {
   "name": "ergo-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Various helper functions used in ergo-cms",
   "main": "index.js",
   "scripts": {
