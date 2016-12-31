@@ -4,7 +4,7 @@
   "description": "Various helper functions used in ergo-cms",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test --require test/helpers/chai.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ergo-cms/ergo-utils/issues"
   },
-  "homepage": "https://github.com/ergo-cms/ergo-utils#readme"
+  "homepage": "https://github.com/ergo-cms/ergo-utils#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "test-console": "^1.0.0"
+  }
 }
