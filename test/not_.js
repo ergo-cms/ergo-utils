@@ -50,9 +50,9 @@ describe('Checks not underscore (not_)', function() {
 		assert.equal(arrayObj, _.toRealArray(arrayObj), "An Array object");
 		var arrayObj2 = [];
 		assert.equal(arrayObj2, _.toRealArray(arrayObj2), "An array");
-		const buf1 = Buffer.from(str);
+		const buf1 = Buffer.from(str, 'utf8');
 		assert.notEqual(buf1, _.toRealArray( buf1 ) , "A NodeBuffer");
-		assert.equal(buf1.toString(), 
+		assert.equal(buf1.toString('utf8'), 
 			decodeURIComponent(escape(String.fromCharCode.apply(String,_.toRealArray( buf1 )))) , "A NodeBuffer as a utf8 string");
 	})
 });
