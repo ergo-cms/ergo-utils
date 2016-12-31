@@ -55,4 +55,14 @@ describe('Checks not underscore (not_)', function() {
 		assert.equal(buf1.toString('utf8'), 
 			decodeURIComponent(escape(String.fromCharCode.apply(String,_.toRealArray( buf1 )))) , "A NodeBuffer as a utf8 string");
 	})
+	it('dirExistsSync', function() {
+		assert.isTrue(_.dirExistsSync(__dirname), "A directory")
+		assert.isNotTrue(_.dirExistsSync(__filename), "A file")
+		assert.isNotTrue(_.dirExistsSync(__dirname+ "/idontexist_probably"), "A directory that doesn't exist")
+	})
+	it('fileExistsSync', function() {
+		assert.isTrue(_.fileExistsSync(__filename), "A file")
+		assert.isNotTrue(_.fileExistsSync(__dirname), "A directory")
+		assert.isNotTrue(_.fileExistsSync(__dirname+ "/idontexist_probably"), "A file that doesn't exist")
+	})
 });
