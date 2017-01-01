@@ -6,6 +6,7 @@
 module.exports = {
 	  log: require('./lib/log')
 	, _: require('./lib/not_')
+	, fs: require('./lib/fs')
 	, inject_macros: require('./lib/macros')
 
 };
