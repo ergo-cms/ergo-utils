@@ -1,5 +1,5 @@
 
-var fs = require('../lib/fs');
+var fs = require('../lib/fs').extend();
 var _ = require('../lib/not_');
 var path = require('path');
 
@@ -42,7 +42,7 @@ function check( done, err, f ) {
 }
 
 describe('Checks fs Async', function() {
-	it('dirExists on a folder', function(done) {
+	it('dirExists on a directory', function(done) {
 		fs.dirExists(__dirname, function(err, result) {
 			check(done, err, function() { assert.isTrue(result); });
 		});
@@ -52,13 +52,13 @@ describe('Checks fs Async', function() {
 			check(done, err, function() { assert.isNotTrue(result); });
 		});
 	});
-	it('dirExists on a missing folder', function(done) {
+	it('dirExists on a missing directory', function(done) {
 		fs.dirExists(path.join(__dirname,'iprobably_dont_exist'), function(err, result) {
 			check(done, err, function() { assert.isNotTrue(result); });
 		});
 	});
 
-	it('fileExists on a folder', function(done) {
+	it('fileExists on a directory', function(done) {
 		fs.fileExists(__dirname, function(err, result) {
 			check(done, err, function() { assert.isNotTrue(result); });
 		});
@@ -68,7 +68,7 @@ describe('Checks fs Async', function() {
 			check(done, err, function() { assert.isTrue(result); });
 		});
 	});
-	it('fileExists on a missing folder', function(done) {
+	it('fileExists on a missing directory', function(done) {
 		fs.fileExists(path.join(__dirname,'iprobably_dont_exist'), function(err, result) {
 			check(done, err, function() { assert.isNotTrue(result); });
 		});
