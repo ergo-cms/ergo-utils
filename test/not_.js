@@ -44,6 +44,14 @@ describe('Checks not underscore (not_)', function() {
 		assert.isNotTrue(_.isEmptyObject( _ ), "An object");
 		assert.isTrue(_.isEmptyObject( new Array() ), "An empty Array object");
 	})
+	it('extend', function() {
+		var o = _.extend(
+			{level:1}, {level:2,addedin2:true,alsoAddedIn2:true}, {level:3,addedin2:undefined,addedin3:"Level 3"})
+		assert.equal(o.level, 3 , "Level should be overridden");
+		assert.equal(o.addedin2, undefined, "addedin2 should be deleted");
+		assert.equal(o.alsoAddedIn2, true, "alsoAddedIn2 should be present");
+		assert.equal(o.addedin3, "Level 3", "addedin3 should be a string");
+	})
 	it('toRealArray', function() {
 		var str = "The quick brown fox jumped\t over the lazy dog. 十二月"
 		var arrayObj = new Array();

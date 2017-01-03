@@ -7,12 +7,6 @@ describe('Checks changing global log values', function() {
 	it('Verbosity is zero', function(){
 		assert.equal(log._verbosity(), 0);
 	});
-	it('Default options available', function() {
-		assert.isDefined(log._options)
-	})
-	it('All default options', function() {
-		assert.deepEqual(log._options, defaultOptions, "Default log options have changed")
-	});
 	it('Changes options', function() {
 		log.init({verbose:-100});
 		assert.equal(log._verbosity(),-100);
