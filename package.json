@@ -20,5 +20,8 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "test-console": "^1.0.0"
+  },
+  "dependencies": {
+    "deep-extend": "^0.4.1"
   }
 }

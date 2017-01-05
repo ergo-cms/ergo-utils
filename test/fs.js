@@ -10,6 +10,16 @@ describe('Checks fs Sync', function() {
 		assert.isTrue(_.isFunction(fs['readFile']), 'fs.readFile exists');
 		assert.isTrue(_.isFunction(fs['writeFileSync']), 'fs.writeFileSync exists');
 	});
+	it('isInDir', function() {
+		assert.isTrue(fs.isInDir(__dirname, __filename), 'A file in a directory')
+		assert.isNotTrue(fs.isInDir(__filename, __dirname), 'A directory in a file')
+		assert.isNotTrue(fs.isInDir(path.join(__dirname, 'idontexist_probably'), __filename), 'A file in a directory that doesn\'t exist')
+		assert.isTrue(fs.isInDir(__dirname, path.join(__dirname, 'idontexist_probably')), 'A non existing file in a directory')
+	})
+	it('fixupPathSep', function() {
+		// don't know how to test this one properly in a platform agnostic way... without being stoopid about it.
+		assert.equal(fs.fixupPathSep("a/broken\\path"), 'a'+path.sep+'broken'+path.sep+'path')
+	})
 	it('dirExistsSync', function() {
 		assert.isTrue(fs.dirExistsSync(__dirname), 'A directory')
 		assert.isNotTrue(fs.dirExistsSync(__filename), 'A file')
