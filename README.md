@@ -6,3 +6,4 @@ As such, it has few dependencies, but is used in all ergo-xxx modules.
 
 [![npm Package](https://img.shields.io/npm/v/ergo-utils.svg)](https://www.npmjs.org/package/ergo-utils)
 [![build status](https://secure.travis-ci.org/ergo-cms/ergo-utils.svg)](http://travis-ci.org/ergo-cms/ergo-utils)
+[![Coverage Status](https://coveralls.io/repos/github/ergo-cms/ergo-utils/badge.svg?branch=master)](https://coveralls.io/github/ergo-cms/ergo-utils?branch=master)
