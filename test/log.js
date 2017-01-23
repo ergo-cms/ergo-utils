@@ -31,7 +31,7 @@ describe('test log (global)', function(){
 		assert.deepEqual(output, [ str + '\n' ] );
  	});
 	it('loge', function(){
-		var stderr = require("test-console").stderr;
+		var stderr = require("test-console").stdout; // no longer uses stderr EVER
 		var output = stderr.inspectSync(function() {
     		log.loge(str);
 		});
